@@ -1,11 +1,23 @@
 # Logic for executing Car commands.
 print("If you are running for first time, type 'help' to see commands")
+started=False
+stopped=False
 while 1:
     command = str.lower(input("> "))
     if command=="start":
-        print("Car Started... Enjoy Your Ride...")
+        if started==True:
+            print("Car already started.")
+        else:
+            started=True
+            stopped=False
+            print("Car Started... Enjoy Your Ride...")
     elif command=="stop":
-        print("Car Stoped... Thanks for Riding...")
+        if stopped==True:
+            print("Car already Stopped")
+        else:
+            stopped=True
+            started=False
+            print("Car Stopped... Thanks for Riding...")
     elif command=="quit":
         print("Enjoy your day. Bye !!!")
         break
